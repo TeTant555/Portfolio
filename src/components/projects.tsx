@@ -1,6 +1,10 @@
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import ThreeDCarousel, { type ThreeDCarouselItem } from "./lightswind/3d-carousel";
+import Retail from "@/assets/retailDesktop.png"
+import Atm from "@/assets/atmDesktop.png"
+import Recipe from "@/assets/recipe.png"
+import Portfolio from "@/assets/portfolio.png"
 
 interface ProjectsProps {
 	className?: string;
@@ -8,42 +12,45 @@ interface ProjectsProps {
 
 const items: ThreeDCarouselItem[] = [
   {
-    id: 1,
-    title: "6th SENSE Safety System",
-    brand: "FireCat Group",
-    description: "AI-driven smart uniform tech for law enforcement, military & firefighters.",
-    tags: ["Safety", "Military", "AI Sensors", "Monitoring"],
-    imageUrl: "/img/firecat.jpg",
-    link: "/projects/firecat"
+  id: 1,
+  title: "",
+  brand: "",
+  description: "A robust e-commerce ecosystem specifically tailored for the thrift market industry, enabling users to list pre-owned items, manage vintage inventories, and facilitate sustainable fashion cycles through a secure and highly responsive digital marketplace experience.",
+  tags: ["React.js", "Redux", "ASP.net", "Tanstack Query", "Tailwind CSS", "ShadCN"],
+  imageUrl: Retail,
+  githubUrl: "https://github.com/your-username/thrift-marketplace",
+  link: ""
   },
   {
     id: 1,
-    title: "6th SENSE Safety System",
-    brand: "FireCat Group",
-    description: "AI-driven smart uniform tech for law enforcement, military & firefighters.",
-    tags: ["Safety", "Military", "AI Sensors", "Monitoring"],
-    imageUrl: "/img/firecat.jpg",
-    link: "/projects/firecat"
+    title: "",
+    brand: "",
+    description: "A high-fidelity banking simulation platform developed to provide comprehensive training for financial personnel, focusing on end-to-end automated teller machine operations, secure cash handling protocols, and complex transaction management within a safe environment.",
+    tags: ["Vue.js", "ASP.net", "Tanstack Query", "Tailwind CSS", "ShadCN"],
+    imageUrl: Atm,
+    githubUrl: "https://github.com/your-username/banking-simulator",
+    link: ""
   },
   {
     id: 1,
-    title: "6th SENSE Safety System",
-    brand: "FireCat Group",
-    description: "AI-driven smart uniform tech for law enforcement, military & firefighters.",
-    tags: ["Safety", "Military", "AI Sensors", "Monitoring"],
-    imageUrl: "/img/firecat.jpg",
-    link: "/projects/firecat"
+    title: "",
+    brand: "",
+    description: "A sophisticated full-stack recipe management application engineered as a final capstone project for the NCC Level 5 Diploma in Computing, demonstrating mastery of complex database architectures, user authentication, and advanced frontend state management techniques.",
+    tags: ["React.js", "Laravel", "Tanstack Query", "Tailwind CSS", "ShadCN"],
+    imageUrl: Recipe,
+    githubUrl: "https://github.com/your-username/recipe-manager",
+    link: ""
   },
   {
     id: 1,
-    title: "6th SENSE Safety System",
-    brand: "FireCat Group",
-    description: "AI-driven smart uniform tech for law enforcement, military & firefighters.",
-    tags: ["Safety", "Military", "AI Sensors", "Monitoring"],
-    imageUrl: "/img/firecat.jpg",
-    link: "/projects/firecat"
-  }
-];
+    title: "",
+    brand: "",
+    description: "A professional digital portfolio and career showcase platform meticulously designed to highlight technical competencies, project history, and software engineering growth, originally built to demonstrate industry readiness and creative problem-solving to potential employers.",
+    tags: ["React.js", "Bootstrap"],
+    imageUrl: Portfolio,
+    githubUrl: "https://github.com/your-username/portfolio",
+    link: "https://tetant555.github.io/Tetant-Portfolio/"
+  }];
 
 const Projects = ({ className }: ProjectsProps) => {
 	return (
@@ -66,11 +73,11 @@ const Projects = ({ className }: ProjectsProps) => {
 						Featured Projects
 					</Badge>
 					<h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-tpri">
-						Projects that ship value
+						Projects that Ship Real Value
 					</h2>
 					<p className="text-lg text-tsec">
-						A snapshot of products built with thoughtful architecture, delightful
-						UX, and measurable outcomes.
+						A deep dive into full-stack applications where thoughtful architecture 
+            meets high-performance code to solve complex, real-world challenges.
 					</p>
 				</div>
 			</div>

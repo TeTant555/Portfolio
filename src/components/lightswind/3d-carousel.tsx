@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState, type TouchEvent } from "react";
-import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight, Github } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 export interface ThreeDCarouselItem {
@@ -10,6 +11,7 @@ export interface ThreeDCarouselItem {
   description: string;
   tags: string[];
   imageUrl: string;
+  githubUrl: string;
   link: string;
 }
 
@@ -108,7 +110,7 @@ const ThreeDCarousel = ({
       className="relative mx-auto flex w-full max-w-(--breakpoint-xl) justify-center px-4 sm:px-6 lg:px-8"
     >
       <div
-        className="relative w-full overflow-hidden rounded-3xl border border-white/10 bg-bpri/70 backdrop-blur"
+        className="relative w-full overflow-hidden rounded-3xl bg-bpri/70 backdrop-blur"
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
         onTouchStart={onTouchStart}
@@ -127,7 +129,7 @@ const ThreeDCarousel = ({
               )}`}
             >
               <Card
-                className="flex h-full flex-col overflow-hidden border-white/10 bg-bpri/90 shadow-2xl"
+                className="flex h-full flex-col overflow-hidden shadow-2xl"
                 style={{ height: cardHeight }}
               >
                 <div
@@ -143,7 +145,6 @@ const ThreeDCarousel = ({
                     <h3 className="mb-2 text-2xl font-semibold uppercase tracking-[0.2em] text-tpri">
                       {item.brand}
                     </h3>
-                    <div className="mx-auto mb-2 h-1 w-12 rounded-full bg-sec" />
                     <p className="text-sm text-tsec/80">{item.title}</p>
                   </div>
                 </div>
@@ -155,31 +156,54 @@ const ThreeDCarousel = ({
                   <p className="text-sm font-medium text-pri/80">{item.brand}</p>
                   <p className="mt-3 flex-grow text-sm text-tsec">{item.description}</p>
 
-                  <div className="mt-5">
-                    <div className="mb-5 flex flex-wrap gap-2">
+                  <div className="mt-5 flex flex-col gap-4">
+                    <div className="flex flex-wrap gap-2">
                       {item.tags.map((tag, idx) => (
                         <span
                           key={idx}
-                          className="rounded-full border border-pri/25 bg-pri/10 px-3 py-1 text-xs font-medium uppercase tracking-wide text-pri"
+                          className="rounded-full border border-pri/25 bg-pri/10 px-3 py-1 text-xs font-medium tracking-wide text-pri"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
 
-                    <a
-                      href={item.link}
-                      className="group inline-flex items-center text-sm font-medium text-pri transition-colors hover:text-sec"
-                      onClick={(event) => {
-                        if (item.link.startsWith("/")) {
-                          event.preventDefault();
-                          window.scrollTo({ top: 0, behavior: "smooth" });
-                        }
-                      }}
-                    >
-                      <span>Learn more</span>
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </a>
+                    <div className="flex flex-wrap gap-3">
+                      <Button asChild variant="outline" size="sm">
+                        <a
+                          href={item.githubUrl}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                          className="inline-flex items-center bg-pri/20 hover:bg-pri border-0 shadow text-pri"
+                        >
+                          <span>Github</span>
+                          <Github className="ml-2 h-4 w-4" />
+                        </a>
+                      </Button>
+
+                      {item.link && (
+                        <Button
+                          asChild
+                          size="sm"
+                          onClick={(event) => {
+                            if (item.link.startsWith("/")) {
+                              event.preventDefault();
+                              window.scrollTo({ top: 0, behavior: "smooth" });
+                            }
+                          }}
+                        >
+                          <a
+                            href={item.link}
+                            target={item.link.startsWith("http") ? "_blank" : undefined}
+                            rel={item.link.startsWith("http") ? "noreferrer noopener" : undefined}
+                            className="group inline-flex items-center bg-sec/20 hover:bg-sec border-0 shadow text-sec hover:text-bpri"
+                          >
+                            <span>Go to site</span>
+                            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                          </a>
+                        </Button>
+                      )}
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -190,20 +214,20 @@ const ThreeDCarousel = ({
         {!isMobile && (
           <>
             <button
-              className="absolute left-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-sec/40 bg-sec/80 text-bpri shadow-lg transition-transform transition-colors hover:scale-110 hover:bg-sec"
+              className="absolute left-28 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-transparent text-bpri shadow-lg transition-transform transition-colors hover:scale-110"
               onClick={() =>
                 setActive((prev) => (prev - 1 + items.length) % items.length)
               }
               aria-label="Previous"
             >
-              <ChevronLeft className="h-5 w-5" />
+              <ChevronLeft className="h-10 w-10 bg-sec/85 rounded-sm hover:bg-sec" />
             </button>
             <button
-              className="absolute right-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-sec/40 bg-sec/80 text-bpri shadow-lg transition-transform transition-colors hover:scale-110 hover:bg-sec"
+              className="absolute right-28 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-transparent text-bpri shadow-lg transition-transform transition-colors hover:scale-110"
               onClick={() => setActive((prev) => (prev + 1) % items.length)}
               aria-label="Next"
             >
-              <ChevronRight className="h-5 w-5" />
+              <ChevronRight className="h-10 w-10 bg-sec/85 rounded-sm hover:bg-sec" />
             </button>
           </>
         )}
