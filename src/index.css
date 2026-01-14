@@ -49,13 +49,18 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  --pri: #00D1FF;   
-  --sec: #A29BFE;  
-  --tpri: #FFFFFF;  
-  --tsec: #94A3B8;
-  --bpri: #0F172A;  
-  --bsec: #1E293B;
-
+  /* --pri: #9E2A2B;   
+  --sec: #E09F3E;  
+  --tpri: #335C67;  
+  --tsec: #540B0E; 
+  --bpri: #FFF3E0; 
+  --bsec: #FFE0B2; */
+  --pri: #E76F51;   
+  --sec: #F4A261;   
+  --tpri: #264653;  
+  --tsec: #5A717A; 
+  --bpri: #FFFBF5; 
+  --bsec: #F7EDE2;  
 }
 
 @theme inline {

@@ -56,7 +56,7 @@ const Projects = ({ className }: ProjectsProps) => {
 	return (
 		<section
 			className={cn(
-				"relative py-20 bg-bpri overflow-hidden",
+				"py-20 bg-bpri",
 				"before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_20%_20%,rgba(82,63,255,0.12),transparent_55%)]",
 				"after:absolute after:inset-0 after:bg-[radial-gradient(circle_at_80%_50%,rgba(255,120,255,0.1),transparent_60%)]",
 				"before:-z-10 after:-z-10",
