@@ -16,7 +16,7 @@ function App() {
   };
 
   return (
-    <div className="bg-bpri text-tpri relative overflow-hidden">
+    <div className="bg-bpri text-tpri relative overflow-hiddenn nunito-sans">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-[0.05]">
         <div

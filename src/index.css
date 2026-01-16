@@ -152,3 +152,43 @@
     @apply bg-background text-foreground;
   }
 }
+
+.halant-light {
+  font-family: "Halant", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.halant-regular {
+  font-family: "Halant", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.halant-medium {
+  font-family: "Halant", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.halant-semibold {
+  font-family: "Halant", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.halant-bold {
+  font-family: "Halant", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.nunito-sans {
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
+}
