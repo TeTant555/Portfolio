@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import './App.css'
 import AboutMe from './components/aboutMe'
 import Contact from './components/contact'
@@ -15,6 +16,15 @@ function App() {
     backgroundRepeat: "repeat",
   };
 
+  const projectsRef = useRef<HTMLDivElement | null>(null);
+  const aboutRef = useRef<HTMLDivElement | null>(null);
+  const scrollToProjects = () => {
+    projectsRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+  const scrollToAbout = () => {
+    aboutRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="bg-bpri text-tpri relative overflow-hiddenn nunito-sans">
       {/* Background Pattern */}
@@ -24,14 +34,23 @@ function App() {
           style={backgroundPattern}>
         </div>
       </div>
-      <Hero />
-      <TechStack />
-      <Projects /> 
+
+      <Hero
+        onProjectClick={scrollToProjects}
+        onAboutClick={scrollToAbout} />
+      <TechStack
+        onProjectClick={scrollToProjects} />
+      <div ref={projectsRef} id="projects">
+        <Projects /> 
+      </div>
       <FeaturedProject />
       <Experience />
       <Education />
       <Contact />
-      <AboutMe/>
+
+      <div ref={aboutRef}>
+        <AboutMe />
+      </div>
     </div>
   )
 }

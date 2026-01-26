@@ -1,8 +1,18 @@
+import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import Lottie from "@/animation/lottie";
 import code from "../animation/code.json";
 import { Button } from "@/components/ui/button";
 import { Github, ExternalLink } from "lucide-react";
+import {
+  techStackButtonVariants,
+  techStackCardItemVariants,
+  techStackCardListVariants,
+  techStackColumnVariants,
+  techStackLottieVariants,
+  techStackRightColumnVariants,
+  techStackSectionVariants,
+} from "@/motion/techStackVariants";
 
 const DATA = [
   {
@@ -26,7 +36,7 @@ const DATA = [
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
     title: "Vue.js",
     description:
-      "Progressive framework for building performant and maintainable web apps.",
+      "Progressive framework for building performance and maintainable web apps.",
     color: "from-green-400/20 to-emerald-600/20",
   },
   {
@@ -65,33 +75,43 @@ const DATA = [
 
 interface Integration3Props {
   className?: string;
+  onProjectClick: () => void;
 }
 
-const TechStack = ({ className }: Integration3Props) => {
+const TechStack = ({ className, onProjectClick }: Integration3Props) => {
+  
   return (
-    <section
-      className={cn("py-10 bg-bpri", className)}
+    <motion.section
+      className={cn(className)}
+      variants={techStackSectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.25 }}
     >
-
-      <div className="max-w-(--breakpoint-xl) w-full mx-auto grid lg:grid-cols-2 gap-12 px-6 py-12 relative z-10">
-        <div>
-          <h1 className="my-6 text-4xl font-bold text-pretty lg:text-6xl text-tpri">
+      <div className="max-w-(--breakpoint-xl) w-full mx-auto grid lg:grid-cols-2 gap-12 px-6 pt-13 relative z-10">
+        <motion.div className="mx-auto" variants={techStackColumnVariants}>
+          <h1 className="my-6 font-bold text-pretty text-center lg:text-left text-3xl sm:text-4xl md:text-5xl lg:text-[2.75rem] xl:text-[3.25rem] text-tpri halant-regular">
             Tech Stack
           </h1>
-          <h2 className="mb-8 max-w-3xl text-tsec lg:text-2xl">
-            Crafting modern solutions with cutting-edge technologies
-          </h2>
+          <p className="mb-8 max-w-3xl text-tsec sm:text-lg text-center lg:text-left">
+            Builds reliable, high-quality software with modern tools, focused on
+            usability, performance, and long-term value
+          </p>
 
-          <div className="flex flex-col justify-center gap-3">
+          <motion.div
+            className="flex flex-col justify-center gap-3"
+            variants={techStackCardListVariants}
+          >
             {DATA.map(({ id, icon, title, description, color }) => (
-              <div
+              <motion.div
                 key={id}
+                variants={techStackCardItemVariants}
                 className={cn(
                   "group flex items-center gap-4 p-4 rounded-xl",
                   "bg-gradient-to-r transition-all duration-300",
                   "hover:shadow-lg hover:scale-[1.02] hover:-translate-x-1",
                   "border border-transparent hover:border-pri/20",
-                  color
+                  color,
                 )}
               >
                 <div className="h-12 w-12 flex-shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
@@ -104,52 +124,59 @@ const TechStack = ({ className }: Integration3Props) => {
                   />
                 </div>
                 <div className="text-left">
-                  <div className="text-lg font-semibold text-tpri group-hover:text-pri transition-colors">
+                  <div className="text-lg font-semibold text-tpri group-hover:text-pri transition-colors halant-semibold">
                     {title}
                   </div>
                   <div className="text-sm text-tsec">{description}</div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="flex flex-col justify-center items-center gap-6">
-          <div className="inline-flex items-center justify-center overflow-hidden rounded-xl">
+        <motion.div
+          className="flex flex-col justify-center items-center gap-6"
+          variants={techStackRightColumnVariants}
+        >
+          <motion.div
+            className="inline-flex items-center justify-center overflow-hidden rounded-xl"
+            variants={techStackLottieVariants}
+          >
             <Lottie className="min-w-full min-h-full" animationData={code} />
-          </div>
+          </motion.div>
 
           {/* GitHub CTA */}
-          <div className="flex flex-col mt-3 sm:flex-row gap-5 items-center justify-center">
+          <motion.div
+            className="flex flex-col mt-3 sm:flex-row gap-5 items-center justify-center"
+            variants={techStackButtonVariants}
+          >
             <Button
               size="lg"
               className="rounded-full bg-pri hover:bg-pri/90 text-bpri shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 min-w-50 sm:w-auto"
               asChild
             >
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/TeTant555"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Github className="h-5 w-5" />
-                View on GitHub
+                View more on GitHub
               </a>
             </Button>
             <Button
               variant="outline"
               size="lg"
-              className="rounded-full bg-sec border-0 hover:bg-sec/70 text-bpri hover:text-bpri shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 min-w-50 sm:w-auto"
-              asChild
+              onClick={onProjectClick}
+              className="rounded-full bg-sec border-0 hover:bg-sec/90 text-bpri hover:text-bpri shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 min-w-50 sm:w-auto"
             >
-              <a href="#projects">
-                <ExternalLink className="h-5 w-5" />
-                Explore Projects
-              </a>
+              <ExternalLink className="h-5 w-5" />
+              Explore Projects
             </Button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

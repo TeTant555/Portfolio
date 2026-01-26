@@ -13,7 +13,13 @@ import { ArrowUpRight, CirclePlay } from "lucide-react";
 import { Link } from "react-router-dom";
 import developer from "../animation/developer.json";
 
-export default function Hero() {
+type HeroProps = {
+  onProjectClick: () => void;
+  onAboutClick: () => void;
+}
+
+export default function Hero({ onProjectClick, onAboutClick }: HeroProps) {
+
   return (
     <section className="flex items-center justify-center bg-bpri w-full">
       <motion.div
@@ -77,7 +83,7 @@ export default function Hero() {
             <p className="mt-6 max-w-[60ch] text-tsec text-wrap sm:text-lg text-center lg:text-left">
               I design and develop scalable, user-focused web applications using
               modern technologies. With one year of experience, I focus on clean
-              code, performance, and real-world solutions.
+              code, performance, and real-world solutions
             </p>
           </motion.div>
 
@@ -87,14 +93,16 @@ export default function Hero() {
           >
             <Button
               size="lg"
-              className="rounded-full shadow-md relative text-bpri bg-pri hover:bg-pri/90 hover:text-bpri h-10 w-38 transition-all duration-300"
+              onClick={onProjectClick}
+              className="rounded-full shadow-md relative text-bpri bg-pri hover:bg-pri/90 hover:text-bpri h-10 w-38 transition-all duration-300 hover:scale-105"
             >
               View Projects <ArrowUpRight className="h-6! w-5!" />
             </Button>
             <Button
               variant="outline"
               size="lg"
-              className="rounded-full shadow-md relative text-bsec bg-sec hover:bg-sec/90 hover:text-bsec h-10 w-38 transition-all duration-300"
+              onClick={onAboutClick}
+              className="rounded-full shadow-md relative text-bsec bg-sec hover:bg-sec/90 hover:text-bsec h-10 w-38 transition-all duration-300 hover:scale-105"
             >
               <CirclePlay className="h-6! w-5! text-bsec hover:text-tsec/90" />{" "}
               About Me
