@@ -42,7 +42,7 @@ export default function Hero({ onProjectClick, onAboutClick }: HeroProps) {
                 bg-sec border-sec text-bpri
                 transition-all duration-300 ease-out
                 hover:!bg-sec/80
-                hover:scale-[1.05]
+                hover:scale-[1.05] z-20
               "
             >
               <Link
@@ -94,7 +94,7 @@ export default function Hero({ onProjectClick, onAboutClick }: HeroProps) {
             <Button
               size="lg"
               onClick={onProjectClick}
-              className="rounded-full shadow-md relative text-bpri bg-pri hover:bg-pri/90 hover:text-bpri h-10 w-38 transition-all duration-300 hover:scale-105"
+              className="rounded-full shadow-md relative z-20 text-bpri bg-pri hover:bg-pri/90 hover:text-bpri h-10 w-38 transition-all duration-300 hover:scale-105"
             >
               View Projects <ArrowUpRight className="h-6! w-5!" />
             </Button>
@@ -102,7 +102,7 @@ export default function Hero({ onProjectClick, onAboutClick }: HeroProps) {
               variant="outline"
               size="lg"
               onClick={onAboutClick}
-              className="rounded-full shadow-md relative text-bsec bg-sec hover:bg-sec/90 hover:text-bsec h-10 w-38 transition-all duration-300 hover:scale-105"
+              className="rounded-full shadow-md relative z-20 text-bsec bg-sec hover:bg-sec/90 hover:text-bsec h-10 w-38 transition-all duration-300 hover:scale-105"
             >
               <CirclePlay className="h-6! w-5! text-bsec hover:text-tsec/90" />{" "}
               About Me

@@ -53,10 +53,11 @@ const items: ThreeDCarouselItem[] = [
   }];
 
 const Projects = ({ className }: ProjectsProps) => {
+
 	return (
 		<section
 			className={cn(
-				"py-20 bg-bpri",
+				"pt-20 bg-bpri",
 				"before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_20%_20%,rgba(82,63,255,0.12),transparent_55%)]",
 				"after:absolute after:inset-0 after:bg-[radial-gradient(circle_at_80%_50%,rgba(255,120,255,0.1),transparent_60%)]",
 				"before:-z-10 after:-z-10",
@@ -72,7 +73,7 @@ const Projects = ({ className }: ProjectsProps) => {
 					>
 						Featured Projects
 					</Badge>
-					<h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-tpri">
+					<h2 className="halant-regular text-3xl sm:text-4xl md:text-5xl lg:text-[2.75rem] xl:text-[3.25rem] font-bold tracking-tight text-tpri">
 						Projects that Ship Real Value
 					</h2>
 					<p className="text-lg text-tsec">

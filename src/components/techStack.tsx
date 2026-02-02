@@ -152,7 +152,7 @@ const TechStack = ({ className, onProjectClick }: Integration3Props) => {
           >
             <Button
               size="lg"
-              className="rounded-full bg-pri hover:bg-pri/90 text-bpri shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 min-w-50 sm:w-auto"
+              className="relative z-20 rounded-md sm:rounded-full bg-pri hover:bg-pri/90 text-bpri shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 min-w-70 sm:w-auto"
               asChild
             >
               <a
@@ -168,7 +168,7 @@ const TechStack = ({ className, onProjectClick }: Integration3Props) => {
               variant="outline"
               size="lg"
               onClick={onProjectClick}
-              className="rounded-full bg-sec border-0 hover:bg-sec/90 text-bpri hover:text-bpri shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 min-w-50 sm:w-auto"
+              className="relative z-20 rounded-md sm:rounded-full bg-sec border-0 hover:bg-sec/90 text-bpri hover:text-bpri shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 min-w-70 sm:w-auto"
             >
               <ExternalLink className="h-5 w-5" />
               Explore Projects
