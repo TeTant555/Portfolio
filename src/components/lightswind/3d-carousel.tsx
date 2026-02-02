@@ -120,7 +120,7 @@ const ThreeDCarousel = ({
       >
         <div className="pointer-events-none absolute inset-0" />
         <div className="pointer-events-none absolute inset-0" />
-        <div className="relative flex h-[550px] items-center justify-center">
+        <div className="relative bg-bsec flex h-[550px] items-center justify-center">
           {items.map((item, index) => (
             <div
               key={item.id}
