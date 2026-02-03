@@ -82,7 +82,7 @@ export default function Hero({ onProjectClick, onAboutClick }: HeroProps) {
           >
             <p className="mt-6 max-w-[60ch] text-tsec text-wrap sm:text-lg text-center lg:text-left">
               I design and develop scalable, user-focused web applications using
-              modern technologies. With one year of experience, I focus on clean
+              modern technologies. With <b>two years</b> of experience, I focus on clean
               code, performance, and real-world solutions
             </p>
           </motion.div>
