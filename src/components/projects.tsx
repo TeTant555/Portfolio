@@ -21,7 +21,6 @@ import {
   activeCardAuraVariants,
   cardContentItemVariants,
   cardContentStaggerVariants,
-  carouselAuroraVariants,
   dotVariants,
   githubCtaGlowVariants,
   githubCtaVariants,
@@ -252,17 +251,6 @@ const Projects = ({ className }: ProjectsProps) => {
             }
           }}
         >
-          {/* Aurora sweep layer (exclusive feel) */}
-          <motion.div
-            aria-hidden="true"
-            className={cn(
-              "pointer-events-none absolute inset-0 -z-10",
-              "bg-[radial-gradient(circle_at_12%_18%,rgba(255,195,0,0.10),transparent_35%),radial-gradient(circle_at_88%_70%,rgba(82,63,255,0.14),transparent_42%),radial-gradient(circle_at_50%_50%,rgba(0,29,61,0.35),transparent_62%)]",
-            )}
-            variants={carouselAuroraVariants}
-            initial="initial"
-            animate="animate"
-          />
 
           <div
             className="relative bg-transparent! flex min-h-130 sm:min-h-140 items-center justify-center px-3 sm:px-6"

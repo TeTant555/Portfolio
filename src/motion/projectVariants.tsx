@@ -54,22 +54,6 @@ export const projectsIntroItemVariants: Variants = {
   },
 };
 
-export const carouselAuroraVariants: Variants = {
-  initial: {
-    opacity: 0.35,
-    backgroundPosition: "0% 50%",
-  },
-  animate: {
-    opacity: [0.25, 0.5, 0.3],
-    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-    transition: {
-      duration: 30,
-      ease: "linear",
-      repeat: Infinity,
-    },
-  },
-};
-
 export const activeCardAuraVariants: Variants = {
   inactive: {
     filter: "blur(1.2px)",
