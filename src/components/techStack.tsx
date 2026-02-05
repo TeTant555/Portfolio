@@ -88,7 +88,7 @@ const TechStack = ({ className, onProjectClick }: Integration3Props) => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.25 }}
     >
-      <div className="max-w-(--breakpoint-xl) w-full mx-auto grid lg:grid-cols-2 gap-12 px-6 pt-13 relative z-10">
+      <div className="max-w-[var(--breakpoint-xl)] w-full mx-auto grid lg:grid-cols-2 gap-12 px-6 pt-13 relative z-10">
         <motion.div className="mx-auto" variants={techStackColumnVariants}>
           <h1 className="my-6 font-bold text-pretty text-center lg:text-left text-3xl sm:text-4xl md:text-5xl lg:text-[2.75rem] xl:text-[3.25rem] text-tpri halant-regular">
             Tech Stack
@@ -152,7 +152,7 @@ const TechStack = ({ className, onProjectClick }: Integration3Props) => {
           >
             <Button
               size="lg"
-              className="relative z-20 rounded-md sm:rounded-full bg-pri hover:bg-pri/90 text-bpri shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 min-w-70 sm:w-auto"
+              className="relative z-20 rounded-md sm:rounded-full bg-pri/85 hover:bg-pri text-bpri shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 min-w-70 sm:w-auto"
               asChild
             >
               <a
@@ -168,7 +168,7 @@ const TechStack = ({ className, onProjectClick }: Integration3Props) => {
               variant="outline"
               size="lg"
               onClick={onProjectClick}
-              className="relative z-20 rounded-md sm:rounded-full bg-sec border-0 hover:bg-sec/90 text-bpri hover:text-bpri shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 min-w-70 sm:w-auto"
+              className="relative z-20 rounded-md sm:rounded-full bg-sec/85 border-0 hover:bg-sec text-bpri hover:text-bpri shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 min-w-70 sm:w-auto"
             >
               <ExternalLink className="h-5 w-5" />
               Explore Projects

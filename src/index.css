@@ -55,15 +55,16 @@
   --tsec: #540B0E; 
   --bpri: #FFF3E0; 
   --bsec: #FFE0B2; */
-  --pri: #E76F51;   
-  --sec: #F4A261;   
-  --tpri: #264653;  
-  --tsec: #5A717A; 
-  --bpri: #FFFBF5; 
-  --bsec: #F7EDE2;  
+  --pri: #FFD700;   
+  --sec: #FFC300;   
+  --tpri: #FFFFFF;  
+  --tsec: #E0E0E0; 
+  --bpri: #000814; 
+  --bsec: #001D3D;  
 
-  --pattern-grid: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  --pattern-grid-size: 60px 60px;
+  /* Subtle cross-dot pattern in white with higher opacity for visibility */
+  --pattern-grid: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='1.5' fill='rgba(255, 255, 255, 0.15)'/%3E%3C/svg%3E");
+  --pattern-grid-size: 20px 20px;
 }
 
 @theme inline {
@@ -157,17 +158,25 @@
 }
 
 @layer utilities {
-  /* Apply the subtle pattern anywhere you use the “background” palette colors. */
+  /* Creative Deep Ocean Gold Background */
   :where(
       .bg-bpri,
       .bg-bpri\/40,
       .bg-bpri\/70,
-      .bg-bsec,
-      .bg-bsec\/90
     ) {
-    background-image: var(--pattern-grid);
-    background-repeat: repeat;
-    background-size: var(--pattern-grid-size);
+    background-color: var(--bpri);
+    background-image: 
+      /* Subtle Texture */
+      var(--pattern-grid),
+      /* Deep Blue Glow from bottom-left */
+      radial-gradient(circle at 10% 90%, rgba(0, 29, 61, 0.45) 0%, transparent 50%),
+      /* Soft Gold Highlight from top-right */
+      radial-gradient(circle at 90% 10%, rgba(255, 215, 0, 0.05) 0%, transparent 40%),
+      /* Another Blue hint for balance */
+      radial-gradient(circle at 50% 50%, rgba(0, 29, 61, 0.2) 0%, transparent 60%);
+    background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+    background-size: var(--pattern-grid-size), auto, auto, auto;
+    background-attachment: fixed; /* Parallax effect feeling */
   }
 }
 
