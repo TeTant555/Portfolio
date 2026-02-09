@@ -1,5 +1,17 @@
 import { Badge } from "./ui/badge";
 import { Card, CardContent, CardHeader } from "./ui/card";
+import { motion } from "motion/react";
+import {
+  educationCardContentItem,
+  educationCardContentStagger,
+  educationCardVariants,
+  educationDotVariants,
+  educationHeaderItem,
+  educationHeaderStagger,
+  educationListVariants,
+  educationSectionVariants,
+  educationTimelineVariants,
+} from "@/motion/educationVariants";
 
 type EducationStop = {
   period: string;
@@ -12,112 +24,146 @@ type EducationStop = {
 
 const educationJourney: EducationStop[] = [
   {
-    period: "2024 — Present",
-    degree: "M.Sc. Human-Computer Interaction",
-    institution: "Georgia Institute of Technology",
-    location: "Atlanta, USA (Remote)",
+    period: "2023 — 2024",
+    degree: "NCC Level 5 Diploma in Computing",
+    institution: "NCC Education",
+    location: "No. 36/38, Alanpya Pagoda Road, Mingalar Taung Nyunt Township, Yangon",
     summary:
-      "Exploring the intersection of product design, accessibility, and immersive interfaces to craft empathetic digital experiences.",
+      "Advanced studies in software design, databases, and systems development, with an emphasis on building reliable applications and shipping projects to specification.",
     highlights: [
-      "Graduate research assistant for the Augmented Experiences Lab.",
-      "Co-led a usability audit for a healthcare dashboard adopted by three clinics.",
-      "Built a design system prototype evaluated by 40+ participants.",
+      "Delivered a capstone software project with requirements, implementation, and testing documentation.",
+      "Designed and implemented a relational database solution (schema, constraints, queries, and optimisation).",
+      "Built a full-stack web application demonstrating secure authentication and clean API design.",
     ],
   },
   {
-    period: "2019 — 2023",
-    degree: "B.Sc. Computer Science",
-    institution: "University of Lagos",
-    location: "Lagos, Nigeria",
+    period: "2022 — 2023",
+    degree: "NCC Level 4 Diploma in Computing",
+    institution: "NCC Education",
+    location: "No. 36/38, Alanpya Pagoda Road, Mingalar Taung Nyunt Township, Yangon",
     summary:
-      "Focused on distributed systems, inclusive design, and developer tooling while building community-driven projects at scale.",
+      "Built a strong foundation across programming, computer systems, networks, and the software development lifecycle, focusing on practical labs and real-world problem solving.",
     highlights: [
-      "Graduated with First Class honours (GPA: 4.68/5.00).",
-      "Founded the campus Developer Circle mentoring 80+ students.",
-      "Won the 2022 Pan-African Smart City Hackathon (1st place).",
-    ],
-  },
-  {
-    period: "2017 — 2019",
-    degree: "Diploma, Software Engineering",
-    institution: "ALX Africa",
-    location: "Hybrid",
-    summary:
-      "Accelerated engineering fundamentals through hands-on labs covering algorithms, infrastructure, and product delivery cycles.",
-    highlights: [
-      "Designed a microservices deployment playbook adopted by the cohort.",
-      "Delivered peer workshops on accessible frontend architecture.",
-      "Shipped a community talent portal serving 1,200 monthly users.",
+      "Developed core programming skills through structured exercises in problem solving, data structures, and debugging.",
+      "Applied systems analysis methods to translate user needs into clear functional and non-functional requirements.",
+      "Created responsive web interfaces and implemented basic backend logic for data-driven features.",
     ],
   },
 ];
 
 const Education = () => {
   return (
-    <section className="relative mx-auto mt-10 w-full max-w-4xl px-6 pb-24">
-      <div className="flex flex-col items-center gap-3 text-center">
-        <h2 className="text-2xl font-semibold text-pri md:text-4xl">
+    <motion.section
+      className="relative mx-auto mt-10 w-full max-w-4xl px-6 pb-24"
+      variants={educationSectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.25 }}
+    >
+      <motion.div
+        className="flex flex-col items-center gap-3 text-center"
+        variants={educationHeaderStagger}
+      >
+        <motion.h2
+          className="text-3xl font-semibold text-pri md:text-5xl halant-regular"
+          variants={educationHeaderItem}
+        >
           Education Journey
-        </h2>
-        <p className="max-w-2xl text-sm text-tpri md:text-base">
+        </motion.h2>
+        <motion.p
+          className="max-w-2xl text-sm text-tpri md:text-base"
+          variants={educationHeaderItem}
+        >
           Chapters that shaped how I think about systems, people, and the
           meaningful, intuitive experiences we intentionally design and craft
           for them over time.
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
 
       <div className="relative mt-12">
-        <span
+        <motion.span
           className="pointer-events-none absolute left-5 top-8 hidden h-[calc(100%-3rem)] w-px bg-gradient-to-b from-pri/70 via-pri/60 to-pri/10 md:block"
           aria-hidden
+          variants={educationTimelineVariants}
         />
 
-        <div className="space-y-10 md:space-y-14">
+        <motion.div
+          className="space-y-10 md:space-y-14"
+          variants={educationListVariants}
+        >
           {educationJourney.map((stop) => (
-            <article
+            <motion.article
               key={`${stop.period}-${stop.institution}`}
               className="relative md:pl-16"
+              variants={educationCardVariants}
             >
-              <span
+              <motion.span
                 className="absolute left-2.5 top-9 hidden h-5 w-5 items-center justify-center rounded-full border-2 border-pri bg-bpri shadow-[0_0_0_6px_rgba(255,251,245,0.92)] md:flex"
                 aria-hidden
+                variants={educationDotVariants}
               >
                 <span className="h-2.5 w-2.5 rounded-full bg-pri" />
-              </span>
+              </motion.span>
 
               <Card className="border-white/10 bg-bsec/90 shadow-[0_25px_55px_-35px_rgba(38,70,83,0.55)] transition-transform hover:-translate-y-0.5">
                 <CardHeader className="flex flex-col gap-1.5 pb-4">
-                  <Badge className="w-fit rounded-full bg-sec/90 text-bpri shadow-sm">
-                    {stop.period}
-                  </Badge>
-                  <h3 className="text-xl font-semibold text-tpri md:text-2xl">
-                    {stop.degree}
-                  </h3>
-                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-pri/70 md:text-sm">
-                    {stop.institution}
-                  </p>
-                  <span className="text-sm text-tsec/80">{stop.location}</span>
+                  <motion.div className="space-y-0.5" variants={educationCardContentStagger}>
+                    <motion.div variants={educationCardContentItem}>
+                      <Badge className="w-fit font-semibold rounded-full bg-sec/90 mb-3 text-bpri shadow-sm">
+                        {stop.period}
+                      </Badge>
+                    </motion.div>
+                    <motion.h3
+                      className="text-xl font-semibold text-tpri md:text-2xl"
+                      variants={educationCardContentItem}
+                    >
+                      {stop.degree}
+                    </motion.h3>
+                    <motion.p
+                      className="text-xs font-semibold uppercase tracking-[0.24em] text-pri/70 md:text-sm"
+                      variants={educationCardContentItem}
+                    >
+                      {stop.institution}
+                    </motion.p>
+                    <motion.span
+                      className="text-sm text-tsec/80"
+                      variants={educationCardContentItem}
+                    >
+                      {stop.location}
+                    </motion.span>
+                  </motion.div>
                 </CardHeader>
-                <CardContent className="space-y-4 text-sm text-tsec md:text-base md:leading-relaxed">
-                  <p>{stop.summary}</p>
-                  <ul className="space-y-2">
-                    {stop.highlights.map((highlight) => (
-                      <li
-                        key={highlight}
-                        className="flex items-start gap-2 text-sm text-tsec/90"
-                      >
-                        <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-pri/70" />
-                        <span>{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <CardContent className="text-sm text-tsec md:text-base md:leading-relaxed">
+                  <motion.div
+                    className="space-y-4"
+                    variants={educationCardContentStagger}
+                  >
+                    <motion.p variants={educationCardContentItem}>
+                      {stop.summary}
+                    </motion.p>
+                    <motion.ul
+                      className="space-y-2"
+                      variants={educationCardContentStagger}
+                    >
+                      {stop.highlights.map((highlight) => (
+                        <motion.li
+                          key={highlight}
+                          className="flex items-start gap-2 text-sm text-tsec/90"
+                          variants={educationCardContentItem}
+                        >
+                          <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-pri/70" />
+                          <span>{highlight}</span>
+                        </motion.li>
+                      ))}
+                    </motion.ul>
+                  </motion.div>
                 </CardContent>
               </Card>
-            </article>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

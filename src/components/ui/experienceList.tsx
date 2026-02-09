@@ -1,9 +1,11 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import type { SVGProps } from "react";
+import type { ImgHTMLAttributes, SVGProps } from "react";
 import { useEffect, useRef, useState } from "react";
 import { useOnClickOutside } from "usehooks-ts";
+import MstCollege from "@/assets/mstCollege.png";
+import FusionSolution from "@/assets/fusionSolution.png";
 
 export type Job = {
   company: string;
@@ -22,21 +24,20 @@ export type ExperienceListComponentProps = {
   onJobClick?: (job: Job) => void;
 };
 
-export const Resend = (props: SVGProps<SVGSVGElement>) => (
-  <svg
-    fill="none"
-    height="1em"
-    viewBox="0 0 600 600"
-    width="1em"
-    xmlns="http://www.w3.org/2000/svg"
+export const Resend = ({
+  alt = "MST College",
+  className,
+  ...props
+}: ImgHTMLAttributes<HTMLImageElement>) => (
+  <img
+    src={MstCollege}
+    alt={alt}
+    loading="lazy"
+    className={["h-10 w-10 object-contain", className]
+      .filter(Boolean)
+      .join(" ")}
     {...props}
-  >
-    <title>Resend logo</title>
-    <path
-      d="M186 447.471V154H318.062C336.788 154 353.697 158.053 368.79 166.158C384.163 174.263 396.181 185.443 404.845 199.698C413.51 213.672 417.842 229.604 417.842 247.491C417.842 265.938 413.51 282.568 404.845 297.381C396.181 311.915 384.302 323.375 369.209 331.759C354.117 340.144 337.067 344.337 318.062 344.337H253.917V447.471H186ZM348.667 447.471L274.041 314.99L346.99 304.509L430 447.471H348.667ZM253.917 289.835H311.773C319.04 289.835 325.329 288.298 330.639 285.223C336.229 281.869 340.421 277.258 343.216 271.388C346.291 265.519 347.828 258.811 347.828 251.265C347.828 243.718 346.151 237.15 342.797 231.56C339.443 225.691 334.552 221.219 328.124 218.144C321.975 215.07 314.428 213.533 305.484 213.533H253.917V289.835Z"
-      fill="currentColor"
-    />
-  </svg>
+  />
 );
 
 export const Turso = (props: SVGProps<SVGSVGElement>) => (
@@ -64,54 +65,20 @@ export const Turso = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-export const Supabase = (props: SVGProps<SVGSVGElement>) => (
-  <svg
-    fill="none"
-    height="1em"
-    viewBox="0 0 109 113"
-    width="1em"
-    xmlns="http://www.w3.org/2000/svg"
+export const Supabase = ({
+  alt = "Fusion Solution",
+  className,
+  ...props
+}: ImgHTMLAttributes<HTMLImageElement>) => (
+  <img
+    src={FusionSolution}
+    alt={alt}
+    loading="lazy"
+    className={["h-10 w-10 object-contain", className]
+      .filter(Boolean)
+      .join(" ")}
     {...props}
-  >
-    <title>Supabase logo</title>
-    <path
-      d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.859 55.9374L63.7076 110.284Z"
-      fill="url(#paint0_linear)"
-    />
-    <path
-      d="M63.7076 110.284C60.8481 113.885 55.0502 111.912 54.9813 107.314L53.9738 40.0627L99.1935 40.0627C107.384 40.0627 111.952 49.5228 106.859 55.9374L63.7076 110.284Z"
-      fill="url(#paint1_linear)"
-      fillOpacity={0.2}
-    />
-    <path
-      d="M45.317 2.07103C48.1765 -1.53037 53.9745 0.442937 54.0434 5.041L54.4849 72.2922H9.83113C1.64038 72.2922 -2.92775 62.8321 2.1655 56.4175L45.317 2.07103Z"
-      fill="#3ECF8E"
-    />
-    <defs>
-      <linearGradient
-        gradientUnits="userSpaceOnUse"
-        id="paint0_linear"
-        x1={53.9738}
-        x2={94.1635}
-        y1={54.974}
-        y2={71.8295}
-      >
-        <stop stopColor="#249361" />
-        <stop offset={1} stopColor="#3ECF8E" />
-      </linearGradient>
-      <linearGradient
-        gradientUnits="userSpaceOnUse"
-        id="paint1_linear"
-        x1={36.1558}
-        x2={54.4844}
-        y1={30.578}
-        y2={65.0806}
-      >
-        <stop />
-        <stop offset={1} stopOpacity={0} />
-      </linearGradient>
-    </defs>
-  </svg>
+  />
 );
 
 export default function ExperienceList({

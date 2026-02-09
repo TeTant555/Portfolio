@@ -1,49 +1,39 @@
-import ExperienceList, { type Job, Resend, Supabase, Turso } from "./ui/experienceList"
+import ExperienceList, { type Job, Resend, Supabase } from "./ui/experienceList"
+import { SquareDashedBottomCode } from "lucide-react"
 
 const jobs: Job[] = [
   {
-    company: "Resend",
-    title: "Senior Frontend Engineer",
+    company: "MST College",
+    title: "Software Developer Internship",
     logo: <Resend className="h-8 w-8" />,
     job_description:
       "Drive the development of our email infrastructure dashboard with performant, accessible web experiences that scale globally.",
-    salary: "$150k - $190k",
-    location: "San Francisco, CA",
-    remote: "Hybrid",
+    salary: "Feb 1, 2024 - Aug 21, 2024",
+    location: "Alanpya Pagodaa Street, Yangon",
+    remote: "No",
     job_time: "Full-time",
   },
   {
-    company: "Turso",
-    title: "Distributed Systems Engineer",
-    logo: <Turso className="h-8 w-8" />,
+    company: "Freelance Developer",
+    title: "Freelance Software Developer",
+    logo: <SquareDashedBottomCode className="h-8 w-8" />,
     job_description:
       "Design data replication strategies, ship Rust services, and ensure low-latency access across our edge database network.",
-    salary: "$140k - $175k",
+    salary: "April 2024 - Present",
     location: "Remote",
     remote: "Yes",
-    job_time: "Full-time",
+    job_time: "Part-time",
   },
   {
-    company: "Supabase",
-    title: "Developer Advocate",
+    company: "Fusion Solution Co., Ltd",
+    title: "Software Developer",
     logo: <Supabase className="h-8 w-8" />,
     job_description:
       "Create tutorials, sample apps, and conference talks that help developers succeed with the Supabase platform.",
-    salary: "$110k - $150k",
-    location: "Austin, TX",
-    remote: "Hybrid",
+    salary: "Dec 1, 2024 - Present",
+    location: "Mya Khwar Nyo Housing, Yangon",
+    remote: "No",
     job_time: "Full-time",
-  },
-  {
-    company: "Open Source Collective",
-    title: "Community Engineer",
-    logo: <Resend className="h-8 w-8" />,
-    job_description:
-      "Support maintainers, build automation around contributor workflows, and keep the ecosystem running smoothly.",
-    salary: "$95k - $125k",
-    location: "Seattle, WA",
-    remote: "Hybrid",
-    job_time: "Contract",
   },
 ]
 
@@ -51,7 +41,7 @@ const Experience = () => {
   return (
     <section className="relative mx-auto w-full max-w-4xl px-6 mt-10 pb-15">
       <div className="flex flex-col items-center gap-3 text-center">
-        <h2 className="text-2xl font-semibold text-pri md:text-4xl">
+        <h2 className="text-3xl font-semibold text-pri md:text-5xl halant-regular">
           Professional Experience
         </h2>
         <p className="max-w-2xl text-sm text-tpri md:text-base">
