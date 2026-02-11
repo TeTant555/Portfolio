@@ -3,7 +3,7 @@ import './App.css'
 import AboutMe from './components/aboutMe'
 import Contact from './components/contact'
 import Education from './components/education'
-import FeaturedProject from './components/featuredProject'
+// import FeaturedProject from './components/featuredProject'
 import Hero from './components/hero'
 import { Projects } from './components/projects'
 import { TechStack } from './components/techStack'
@@ -28,7 +28,7 @@ function App() {
       <div ref={projectsRef} id="projects">
         <Projects /> 
       </div>
-      <FeaturedProject />
+      {/* <FeaturedProject /> */}
       <Education />
       <Contact />
 

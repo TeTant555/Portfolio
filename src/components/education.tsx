@@ -54,7 +54,7 @@ const educationJourney: EducationStop[] = [
 const Education = () => {
   return (
     <motion.section
-      className="relative mx-auto mt-10 w-full max-w-4xl px-6 pb-24"
+      className="relative mx-auto mt-20 w-full max-w-4xl px-6 pb-24"
       variants={educationSectionVariants}
       initial="hidden"
       whileInView="visible"

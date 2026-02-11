@@ -55,7 +55,7 @@ const DATA = [
       "Developing scalable web applications and APIs with ASP.NET framework.",
     color: "from-blue-500/20 to-purple-600/20",
   },
-  {
+  /* {
     id: 6,
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
     title: "Node.js",
@@ -70,7 +70,7 @@ const DATA = [
     description:
       "Full-stack React framework for production-grade applications with SSR and SSG.",
     color: "from-gray-700/20 to-slate-900/20",
-  },
+  }, */
 ];
 
 interface Integration3Props {
