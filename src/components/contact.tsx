@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { motion } from "motion/react";
-import { Github, Linkedin, Mail, SendHorizontal } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, SendHorizontal } from "lucide-react";
 import {
   contactCardVariants,
   contactCardsGrid,
@@ -23,21 +23,27 @@ import { useRef, useState } from "react";
 const channels = [
   {
     label: "Email",
-    href: "mailto:hello@example.com",
+    href: "mailto:thettetantaung@gmail.com",
     description: "Fastest response. Expect a reply in under a day.",
     icon: Mail,
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/in/your-profile",
+    href: "https://www.linkedin.com/in/thet-tetant-aung",
     description: "Best for role conversations and collaborations.",
     icon: Linkedin,
   },
   {
     label: "GitHub",
-    href: "https://github.com/your-username",
+    href: "https://github.com/TeTant555",
     description: "See my active projects and experiments.",
     icon: Github,
+  },
+  {
+    label: "Phone",
+    href: "tel:+959782887963",
+    description: "Call or message for quick coordination.",
+    icon: Phone,
   },
 ];
 

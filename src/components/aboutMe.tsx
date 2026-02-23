@@ -95,7 +95,7 @@ const AboutMe = () => {
                 </Avatar>
                 <div>
                   <CardTitle className="text-xl text-tpri">Software Developer</CardTitle>
-                  <p className="text-sm text-tsec/80">Junior Developer • 2 years experience</p>
+                  <p className="text-sm text-tsec/80">Fullstack Developer • 2 years experience</p>
                 </div>
               </div>
               <div className="grid gap-3 text-left sm:text-right">
@@ -114,7 +114,7 @@ const AboutMe = () => {
                   <motion.li className="flex items-start gap-3" variants={aboutListItem}>
                     <CheckCircle2 className="mt-[2px] size-4 text-sec" />
                     <span>
-                      Contributed at FusionSol Company Limited as a Junior Developer, delivering reliable solutions with the team.
+                      Contributed at FusionSol Company Limited as a Fullstack Developer, delivering reliable solutions with the team.
                     </span>
                   </motion.li>
                   <motion.li className="flex items-start gap-3" variants={aboutListItem}>
